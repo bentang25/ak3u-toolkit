@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK3U Ultimate Operational & Career Toolkit</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PALET WARNA THE SAFETY VIBE ---
+           Dominan: #F8F9FA (Putih Bersih / Abu Terang)
+           Sekunder: #198754 (Hijau K3 Kemenaker) & #0D6EFD (Navy/Blue Corporate)
+           Aksen/CTA: #FFC107 (Kuning Safety) & #DC3545 (Oranye/Merah Peringatan)
+        ------------------------------------- */
+        
+        :root {
+            --bg-light: #F8F9FA;
+            --bg-white: #FFFFFF;
+            --text-dark: #212529;
+            --text-muted: #6C757D;
+            --color-k3-green: #198754;
+            --color-navy: #0D6EFD;
+            --color-safety-yellow: #FFC107;
+            --color-danger: #DC3545;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .bold { font-weight: 700; }
+        .highlight-green { color: var(--color-k3-green); font-weight: 700; }
+        .highlight-danger { color: var(--color-danger); font-weight: 700; }
+        
+        /* Section Styling */
+        section {
+            padding: 40px 20px;
+            margin-bottom: 20px;
+            background-color: var(--bg-white);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        /* Hero Section */
+        .hero {
+            border-top: 8px solid var(--color-k3-green);
+            padding-top: 30px;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-danger);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        h1.main-headline {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .sub-headline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .visual-mockup {
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            border: 2px dashed var(--color-k3-green);
+            border-radius: 8px;
+            padding: 40px 20px;
+            margin: 25px 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        /* Buttons & Animations */
+        .btn-cta {
+            display: inline-block;
+            width: 100%;
+            background-color: var(--color-safety-yellow);
+            color: #000000;
+            text-decoration: none;
+            padding: 18px 25px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            border-radius: 8px;
+            border-bottom: 4px solid #d39e00;
+            transition: transform 0.2s, background-color 0.2s;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        .btn-cta:hover {
+            background-color: #ffca2c;
+            transform: translateY(-2px);
+        }
+
+        .btn-cta-subtext {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            display: block;
+        }
+
+        /* Vibrating/Pulse Animation for Final CTA */
+        @keyframes vibrate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); box-shadow: 0 4px 25px rgba(255, 193, 7, 0.6); }
+            100% { transform: scale(1); }
+        }
+
+        .vibrate-box {
+            animation: vibrate 2s infinite ease-in-out;
+        }
+
+        /* Pain Agitation Section */
+        .pain-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--color-danger);
+            margin-bottom: 20px;
+        }
+
+        .card-list {
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .card-item {
+            background-color: var(--bg-light);
+            border-left: 4px solid var(--color-danger);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .card-item-title {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        /* Solution Section */
+        .solution {
+            background-color: #0c192c; /* Deep Corporate Navy background */
+            color: #ffffff;
+            border-left: 6px solid var(--color-k3-green);
+        }
+
+        .solution h2 {
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .product-box {
+            background-color: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+        }
+
+        /* Anatomy Section */
+        .anatomy h2 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .folder-block {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .folder-header {
+            background-color: var(--color-k3-green);
+            color: #ffffff;
+            padding: 10px 15px;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .file-list {
+            list-style: none;
+            padding-left: 5px;
+            margin-bottom: 20px;
+        }
+
+        .file-list li {
+            padding: 8px 10px;
+            border-bottom: 1px solid #edf2f7;
+            font-size: 0.95rem;
+        }
+
+        .file-list li::before {
+            content: "📄 ";
+        }
+
+        /* Guarantee Section */
+        .guarantee {
+            border: 2px solid var(--color-navy);
+            background-color: #f0f7ff;
+        }
+
+        .guarantee-item {
+            margin-bottom: 20px;
+        }
+
+        /* Pricing Section */
+        .price-box {
+            background-color: var(--bg-light);
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .price-strike-huge {
+            text-decoration: line-through;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .price-new {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--color-danger);
+            margin: 10px 0;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 600px) {
+            h1.main-headline { font-size: 1.6rem; }
+            .pain-title { font-size: 1.2rem; }
+            .price-new { font-size: 1.8rem; }
+            section { padding: 25px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- --- SECTION 1: HERO --- -->
+        <section class="hero text-center">
+            <span class="tagline bold">KHUSUS UNTUK PRAKTISI HSE, REKANAN KONTRAKTOR, FRESH GRADUATE, & CALON PESERTA SERTIFIKASI AHLI K3 UMUM DI INDONESIA</span>
+            <h1 class="main-headline">JANGAN BIARKAN KARIER & REPUTASIMU TARUHANNYA HANYA KARENA KAMU HARUS MEMBUAT RATUSAN DOKUMEN K3 DARI NOL</h1>
+            <p class="sub-headline">Mengubah tumpukan regulasi Kemenaker yang membingungkan menjadi Sistem Kerja Siap Pakai. Potong 90% waktu menulismu dan miliki HSE Operational & Career Kit terlengkap yang tinggal Copy-Paste & ganti logo perusahaan dalam hitungan menit.</p>
+            
+            <div class="visual-mockup">
+                [ Tempatkan Visual Disini ]<br>
+                <strong>Mockup Premium 3D Box berlabel: "AK3U ULTIMATE OPERATIONAL & CAREER TOOLKIT"</strong><br>
+                yang dikelilingi ikon Google Docs, Word, dan Excel.
+            </div>
+
+            <div style="margin-top: 25px;">
+                <a href="#order" class="btn-cta">AMBIL AKSES KIT SEKARANG — INVESTASI RP147.000</a>
+                <span class="btn-cta-subtext bold">⚡ Akses Instan ke Google Drive + Update Regulasi Seumur Hidup</span>
+            </div>
+        </section>
+
+        <!-- --- SECTION 2: PAIN AGITATION --- -->
+        <section class="text-center">
+            <h2 class="pain-title">"Jujur, Berapa Banyak Waktu & Energi yang Kamu Buang Minggu Ini Hanya untuk Di depan Laptop, Bingung Menyusun JSA dan HIRADC?”</h2>
+            <p style="color: var(--text-muted); text-align: left;">Mari kita bicara jujur sebagai sesama profesional di lapangan. Menjadi seorang Ahli K3 Umum di Indonesia itu tidak mudah. Tanggung jawabmu besar, tapi waktu dan upayamu sering kali habis untuk urusan administratif yang melelahkan.</p>
+            
+            <p class="bold" style="text-align: left; margin-top: 15px;">Apakah kamu sedang mengalami salah satu dari lingkaran setan ini?</p>
+            
+            <div class="card-list">
+                <div class="card-item">
+                    <div class="card-item-title">Pusing Dikejar Deadline Perusahaan:</div>
+                    <p style="font-size: 0.95rem; color: #4a5568;">Baru ditunjuk jadi penanggung jawab K3 atau diminta bos membuat SOP, Form Inspeksi, dan Manajemen Risiko (HIRADC) dari nol, tapi kamu tidak punya contoh draf yang valid dan terstandarisasi.</p>
+                </div>
+                <div class="card-item">
+                    <div class="card-item-title">Investasi Jutaan Rupiah Terancam Hangus:</div>
+                    <p style="font-size: 0.95rem; color: #4a5568;">Sudah bayar mahal hingga Rp5-7 Juta untuk ikut Pelatihan Sertifikasi AK3U, tapi sekarang stres dan cemas tidak lulus ujian hanya karena bingung menyusun Laporan Praktik Kerja Lapangan (PKL) dan Studi Kasus yang disyaratkan penguji.</p>
+                </div>
+                <div class="card-item">
+                    <div class="card-item-title">Kalah Saing Saat Melamar Kerja:</div>
+                    <p style="font-size: 0.95rem; color: #4a5568;">Punya sertifikat AK3U di tangan, tapi bingung bagaimana membuktikannya di depan HRD saat wawancara kerja karena tidak punya portofolio dokumen K3 riil di industri.</p>
+                </div>
+            </div>
+
+            <p class="bold" style="text-align: left; background: #fff5f5; padding: 12px; border-radius: 6px; border: 1px solid #fed7d7;">
+                Menyusun dokumen ini dari kertas kosong bukan cuma melelahkan, tapi juga berisiko. Satu salah klausul atau salah format, taruhannya adalah teguran manajemen, kegagalan tender perusahaan, atau ketidaklulusan sertifikasimu.
+            </p>
+        </section>
+
+        <!-- --- SECTION 3: THE SOLUTION INTRO --- -->
+        <section class="solution text-center">
+            <h2>Berhenti Menolak Lembur & Membakar Waktumu Secara Sia-sia. Kami Sudah Menyelesaikan Bagian Tersulitnya Untukmu.</h2>
+            <p style="opacity: 0.9; font-size: 0.95rem;">Kamu tidak perlu menjadi jenius birokrasi atau mengetik berhari-hari sampai kurang tidur. Seorang Winning Specialist tahu bagaimana cara bekerja cerdas menggunakan leveraging tools.</p>
+            
+            <div class="product-box">
+                <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-safety-yellow);" class="bold">MEMPERKENALKAN...</span>
+                <h3 style="font-size: 1.5rem; font-weight: 800; margin: 10px 0; color: #fff;">AK3U ULTIMATE OPERATIONAL & CAREER TOOLKIT</h3>
+                <p class="bold" style="color: var(--color-safety-yellow);">Digital Library & Akselerator Dokumen K3 Terlengkap di Indonesia.</p>
+                <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">Ini bukan kumpulan file acak hasil download gratisan di internet yang berantakan. Ini adalah Sistem Arsitektur Dokumen yang dikurasi secara mendalam berdasarkan regulasi Kementerian Ketenagakerjaan (Kemnaker) dan best-practice industri manufaktur, konstruksi, serta oil & gas.</p>
+            </div>
+        </section>
+
+        <!-- --- SECTION 4: DEEP PRODUCT ANATOMY --- -->
+        <section class="anatomy text-center">
+            <h2>Apa Saja "Isi Daging" yang Akan Langsung Kamu Kuasai Hari Ini?</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Seluruh file di dalam Ultimate Toolkit ini berbasis format operasional siap pakai (Microsoft Word & Excel) yang 100% bisa edit. Cukup buka foldernya, pilih dokumen yang kamu butuhkan, isi tanda kurung kosong, ganti logo perusahaanmu, lalu cetak!</p>
+
+            <!-- Block 1 -->
+            <div class="folder-block">
+                <div class="folder-header">CORE MANAGEMENT SYSTEM & AUDIT STANDARD (Sistem Tata Kelola)</div>
+                <ul class="file-list">
+                    <li><strong>SMK3 & ISO_OHSAS:</strong> Dokumen implementasi Sistem Manajemen K3 standar nasional dan internasional untuk audit perusahaan.</li>
+                    <li><strong>SOP Audit Internal & Audit K3:</strong> Kit panduan, prosedur, dan instrumen penilaian mandiri untuk mengaudit kesiapan K3 internal.</li>
+                    <li><strong>CSMS (Contractor Safety Management System):</strong> Paket dokumen wajib untuk mengelola aspek K3 para kontraktor dan sub-kontraktor rekanan.</li>
+                </ul>
+            </div>
+
+            <!-- Block 2 -->
+            <div class="folder-block">
+                <div class="folder-header">RISK ASSESSMENT & WORK PROCEDURES (Manajemen Risiko & SOP)</div>
+                <ul class="file-list">
+                    <li><strong>HIRADC & IBPR:</strong> Dokumen Identifikasi Bahaya, Penilaian Risiko, dan Pengendalian Risiko yang menjadi jantung utama operational safety.</li>
+                    <li><strong>Kumpulan SOP K3 & Kumpulan JSA (Job Safety Analysis):</strong> Ratusan draf instruksi kerja aman dan analisis keselamatan tugas untuk berbagai aktivitas teknis.</li>
+                    <li><strong>Work Permit (Izin Kerja):</strong> Template formulir izin kerja khusus untuk memitigasi pekerjaan berisiko tinggi.</li>
+                </ul>
+            </div>
+
+            <!-- Block 3 -->
+            <div class="folder-block">
+                <div class="folder-header">SPECIALIZED SAFETY ENGINEERING (K3 Spesifik Sektor & Bidang)</div>
+                <ul class="file-list">
+                    <li><strong>K3 Konstruksi:</strong> Kit dokumen K3 Plan khusus untuk proyek pembangunan, infrastruktur, dan teknik sipil.</li>
+                    <li><strong>K3 Listrik dan Petir:</strong> Prosedur keselamatan instalasi arus kuat dan sistem proteksi petir.</li>
+                    <li><strong>K3 Mekanik dan PUBT:</strong> Panduan operasional aman untuk Pesawat Uap dan Bejana Tekan serta permesinan industri.</li>
+                    <li><strong>Ruang Terbatas dan Ketinggian:</strong> SOP mitigasi kritis untuk Confined Space dan Working at Height.</li>
+                    <li><strong>Welding Inspector:</strong> Dokumen pengawasan keselamatan khusus untuk aktivitas pengelasan dan fabrikasi logam.</li>
+                </ul>
+            </div>
+
+            <!-- Block 4 -->
+            <div class="folder-block">
+                <div class="folder-header">EMERGENCY RESPONSE & ENVIRONMENTAL HEALTH (Kedaruratan & Lingkungan)</div>
+                <ul class="file-list">
+                    <li><strong>Penanggulangan Kebakaran:</strong> Prosedur evakuasi, manajemen APAR, hidran, dan pembentukan tim peran kebakaran.</li>
+                    <li><strong>Kecelakaan Kerja & Komite K3:</strong> Format laporan investigasi insiden, analisis akar masalah, serta administrasi P2K3.</li>
+                    <li><strong>P3K dan Kesehatan Kerja:</strong> Pedoman penanganan pertama, kotak P3K, dan manajemen kesehatan higienis karyawan.</li>
+                    <li><strong>Limbah B3 dan Bahan Kimia / Lingkungan Kerja:</strong> SOP pengelolaan material berbahaya, lembar MSDS, dan pengukuran faktor fisika-kimia lingkungan kerja.</li>
+                </ul>
+            </div>
+
+            <!-- Block 5 -->
+            <div class="folder-block">
+                <div class="folder-header">VISUAL ASSETS, REGULATION & COMPLIANCE (Media & Aturan)</div>
+                <ul class="file-list">
+                    <li><strong>Kumpulan Checklist:</strong> Berbagai form inspeksi harian untuk APD, alat berat, mesin, dan area kerja lapangan.</li>
+                    <li><strong>Rambu Keselamatan dan Kesehatan Kerja / Poster K3:</strong> File aset grafis tanda bahaya, marka, dan poster edukasi K3 siap cetak untuk dipasang di area proyek/pabrik.</li>
+                    <li><strong>Dasar K3 & Regulasi K3:</strong> Kompilasi undang-undang, peraturan pemerintah, dan keputusan menteri terbaru sebagai landasan hukum kuat analisis K3-mu.</li>
+                    <li><strong>Lain-Lain:</strong> File pelengkap dinamis untuk kebutuhan administrasi HSE tambahan di lapangan.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- --- SECTION 5: GUARANTEE --- -->
+        <section class="guarantee">
+            <h2 class="text-center" style="color: var(--color-navy); margin-bottom: 20px; font-weight: 800;">Profesionalitas Tanpa Risiko. Keamanan Datamu Adalah Prioritas Kami.</h2>
+            <p class="text-center" style="color: var(--text-muted); margin-bottom: 25px;">Kami tahu reputasimu dipertaruhkan, begitu pula kepercayaanmu pada produk digital. Oleh karena itu, kami memberikan jaminan penuh:</p>
+            
+            <div class="guarantee-item">
+                <h4>🔒 Lifetime Storage Access:</h4>
+                <p style="font-size: 0.95rem; color: #4a5568;">Cukup satu kali bayar (bukan langganan bulanan), file tersimpan aman di Google Drive eksklusif kami dan bisa kamu akses atau unduh kapan saja, di mana saja, bahkan 5 tahun dari sekarang.</p>
+            </div>
+            <div class="guarantee-item">
+                <h4>🔄 Free Regulation Update:</h4>
+                <p style="font-size: 0.95rem; color: #4a5568;">Jika ada pembaruan undang-undang atau regulasi K3 baru dari Kemenaker di masa depan, kami akan memperbarui isi dokumen di dalam Drive secara otomatis. Kamu tinggal download versi terbarunya gratis.</p>
+            </div>
+        </section>
+
+        <!-- --- SECTION 6: PRICING & FINAL CTA --- -->
+        <section id="order" class="text-center" style="border: 2px solid var(--color-k3-green);">
+            <h2 style="font-size: 1.4rem; font-weight: 800; line-height: 1.3; margin-bottom: 15px;">Berapa Harga yang Harus Kamu Bayar untuk Menghemat Ratusan Jam Kerja & Mengamankan Kariermu?</h2>
+            
+            <p style="text-align: left; font-size: 0.95rem; margin-bottom: 10px;">Jika kamu menyewa konsultan HSE luar untuk membuat dokumen ini, biayanya bisa mencapai:</p>
+            <div class="price-strike-huge">Rp15.000.000 - Rp30.000.000</div>
+            
+            <p style="text-align: left; font-size: 0.95rem; margin: 15px 0 5px 0;">Jika kamu membelinya secara parsial di luaran sana, nilainya tidak kurang dari:</p>
+            <div class="price-strike-huge">Rp499.000</div>
+            
+            <p style="margin: 20px 0 10px 0; font-size: 1rem;">Namun, karena kami ingin memotong gesekan birokrasi dan membantu akselerasi praktisi K3 lokal, kamu bisa mengamankan seluruh aset ini hanya dengan investasi:</p>
+
+            <div class="price-box">
+                <div class="price-old">Normal: Rp399.000</div>
+                <div class="price-new">HARGA PROMO BATCH MINGGU INI: <br><strong>Rp147.000</strong></div>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--text-muted); text-align: left; margin-bottom: 20px; background: #fffbeb; padding: 10px; border-radius: 6px; border: 1px solid #fef3c7;">
+                <strong>Kenapa harganya bisa se-ekonomis ini?</strong> Karena kami menjual sistem digital secara efisien. Namun ingat, harga promo Rp147.000 ini hanya berlaku untuk kuota pendaftaran batch minggu ini sebelum kuota database Google Drive dialihkan ke harga normal.
+            </p>
+
+            <p class="bold" style="margin-bottom: 25px; font-size: 1.05rem;">Jangan judi dengan waktu lemburmu. Jangan pertaruhkan kelulusan ujianmu. Ambillah keputusan taktis hari ini juga.</p>
+
+            <!-- Final CTA Vibrate Box -->
+            <div class="vibrate-box">
+                <!-- Ubah tanda '#' di href menjadi link checkout / WhatsApp manualmu -->
+                <a href="#" class="btn-cta">SAYA MAU AKSES SEKARANG — DOWNLOAD RP147.000</a>
+            </div>
+            <p class="bold" style="margin-top: 12px; font-size: 0.9rem; color: var(--color-k3-green);">👉 Klik di sini untuk langsung mengamankan file di Google Drive.</p>
+        </section>
+
+    </div>
+
+</body>
+</html>
