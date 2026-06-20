@@ -69,13 +69,33 @@
             padding-top: 30px;
         }
 
+        /* MODIFIKASI TAGLINE SESUAI JEPRETAN LAYAR: BACKGROUND MERAH TERANG, TEKS PUTIH BERJALAN & KEDAP-KEDIP */
         .tagline {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--color-danger);
-            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            color: #FFFFFF;
+            background-color: #E53E3E; /* Merah terang solid */
+            padding: 8px 10px;
+            margin-bottom: 25px;
             display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            box-shadow: 0 0 10px rgba(229, 62, 62, 0.5);
+        }
+
+        .tagline marquee {
+            display: flex;
+            align-items: center;
+        }
+
+        .tagline span {
+            animation: blinker 1.5s linear infinite;
+            text-shadow: 0 0 5px #FFF, 0 0 10px #FFF; /* Efek putih menyala */
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0.3; }
         }
 
         h1.main-headline {
@@ -283,7 +303,13 @@
 
         <!-- --- SECTION 1: HERO --- -->
         <section class="hero text-center">
-            <span class="tagline bold">KHUSUS UNTUK PRAKTISI HSE, REKANAN KONTRAKTOR, FRESH GRADUATE, & CALON PESERTA SERTIFIKASI AHLI K3 UMUM DI INDONESIA</span>
+            <!-- EDIT TAGLINE BAR: TEXT MERAH, JALAN KE SAMPING & GLOWING BLINK -->
+            <span class="tagline bold">
+                <marquee scrollamount="5" behavior="scroll" direction="left">
+                    <span>🚨 KHUSUS UNTUK FRESH GRADUATE, CALON PESERTA SERTIFIKASI, & SAFETY OFFICER / STAF HSE YANG INGIN MENINGKATKAN KARIERNYA SECARA PROFESIONAL 🚨</span>
+                </marquee>
+            </span>
+            
             <h1 class="main-headline">JANGAN BIARKAN KARIER & REPUTASIMU TARUHANNYA HANYA KARENA KAMU HARUS MEMBUAT RATUSAN DOKUMEN K3 DARI NOL</h1>
             <p class="sub-headline">Mengubah tumpukan regulasi Kemenaker yang membingungkan menjadi Sistem Kerja Siap Pakai. Potong 90% waktu menulismu dan miliki HSE Operational & Career Kit terlengkap yang tinggal Copy-Paste & ganti logo perusahaan dalam hitungan menit.</p>
             
