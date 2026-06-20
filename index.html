@@ -69,14 +69,14 @@
             padding-top: 30px;
         }
 
-        /* MODIFIKASI TAGLINE SESUAI JEPRETAN LAYAR: BACKGROUND MERAH TERANG, TEKS PUTIH BERJALAN & KEDAP-KEDIP */
+        /* PADDING KIRI & KANAN DIUBAH MENJADI 0 AGAR MENYENTUH TEPI */
         .tagline {
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: #FFFFFF;
-            background-color: #E53E3E; /* Merah terang solid */
-            padding: 8px 0;
+            background-color: #E53E3E; 
+            padding: 8px 0; /* Atas-bawah 8px, Kiri-kanan 0 */
             margin-bottom: 25px;
             display: block;
             overflow: hidden;
@@ -91,7 +91,7 @@
 
         .tagline span {
             animation: blinker 1.5s linear infinite;
-            text-shadow: 0 0 5px #FFF, 0 0 10px #FFF; /* Efek putih menyala */
+            text-shadow: 0 0 5px #FFF, 0 0 10px #FFF;
         }
 
         @keyframes blinker {
@@ -303,7 +303,7 @@
 
         <!-- --- SECTION 1: HERO --- -->
         <section class="hero text-center">
-            <!-- EDIT TAGLINE BAR: TEXT MERAH, JALAN KE SAMPING & GLOWING BLINK -->
+            <!-- TAGLINE BAR SEKARANG SUDAH TIDAK MEMILIKI PADDING KIRI-KANAN -->
             <span class="tagline bold">
                 <marquee scrollamount="5" behavior="scroll" direction="left">
                     <span>🚨 KHUSUS UNTUK FRESH GRADUATE, CALON PESERTA SERTIFIKASI, & SAFETY OFFICER / STAF HSE YANG INGIN MENINGKATKAN KARIERNYA SECARA PROFESIONAL 🚨</span>
