@@ -67,21 +67,29 @@
         .hero {
             border-top: 8px solid var(--color-k3-green);
             padding-top: 30px;
+            position: relative;
+            overflow: hidden; /* Mengunci kelengkungan border-radius agar background merah kepotong rapi */
         }
 
-        /* PADDING KIRI & KANAN DIUBAH MENJADI 0 AGAR MENYENTUH TEPI */
+        /* PERBAIKAN UTAMA: MENGGUNAKAN NEGATIVE MARGIN UNTUK MENABRAK PADDING PUTIH DI KIRI KANAN DAN ATAS */
         .tagline {
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: #FFFFFF;
             background-color: #E53E3E; 
-            padding: 8px 0; /* Atas-bawah 8px, Kiri-kanan 0 */
+            padding: 10px 0;
+            
+            /* Menggeser paksa keluar menembus padding section putih */
+            margin-top: -30px; 
+            margin-left: -20px;
+            margin-right: -20px;
             margin-bottom: 25px;
+            
             display: block;
             overflow: hidden;
             white-space: nowrap;
-            box-shadow: 0 0 10px rgba(229, 62, 62, 0.5);
+            box-shadow: 0 4px 10px rgba(229, 62, 62, 0.3);
         }
 
         .tagline marquee {
@@ -193,7 +201,7 @@
 
         /* Solution Section */
         .solution {
-            background-color: #0c192c; /* Deep Corporate Navy background */
+            background-color: #0c192c; 
             color: #ffffff;
             border-left: 6px solid var(--color-k3-green);
         }
@@ -294,6 +302,13 @@
             .pain-title { font-size: 1.2rem; }
             .price-new { font-size: 1.8rem; }
             section { padding: 25px 15px; }
+            
+            /* Menyesuaikan margin negatif di perangkat mobile */
+            .tagline {
+                margin-top: -25px;
+                margin-left: -15px;
+                margin-right: -15px;
+            }
         }
     </style>
 </head>
@@ -303,7 +318,7 @@
 
         <!-- --- SECTION 1: HERO --- -->
         <section class="hero text-center">
-            <!-- TAGLINE BAR SEKARANG SUDAH TIDAK MEMILIKI PADDING KIRI-KANAN -->
+            <!-- TAGLINE BAR SEKARANG MENEMPEL FULL KE SISI WADAH TANPA CELA PUTIH -->
             <span class="tagline bold">
                 <marquee scrollamount="5" behavior="scroll" direction="left">
                     <span>🚨 KHUSUS UNTUK FRESH GRADUATE, CALON PESERTA SERTIFIKASI, & SAFETY OFFICER / STAF HSE YANG INGIN MENINGKATKAN KARIERNYA SECARA PROFESIONAL 🚨</span>
@@ -417,7 +432,7 @@
             <div class="folder-block">
                 <div class="folder-header">VISUAL ASSETS, REGULATION & COMPLIANCE (Media & Aturan)</div>
                 <ul class="file-list">
-                    <li><strong>Kumpulan Checklist:</strong> Berbagai form inspeksi harian untuk APD, alat berat, mesin, dan area kerja lapangan.</li>
+                    <li><strong>Kumpulan Checklist:</strong> Berbagai form insign harian untuk APD, alat berat, mesin, dan area kerja lapangan.</li>
                     <li><strong>Rambu Keselamatan dan Kesehatan Kerja / Poster K3:</strong> File aset grafis tanda bahaya, marka, dan poster edukasi K3 siap cetak untuk dipasang di area proyek/pabrik.</li>
                     <li><strong>Dasar K3 & Regulasi K3:</strong> Kompilasi undang-undang, peraturan pemerintah, dan keputusan menteri terbaru sebagai landasan hukum kuat analisis K3-mu.</li>
                     <li><strong>Lain-Lain:</strong> File pelengkap dinamis untuk kebutuhan administrasi HSE tambahan di lapangan.</li>
@@ -465,7 +480,6 @@
 
             <!-- Final CTA Vibrate Box -->
             <div class="vibrate-box">
-                <!-- Ubah tanda '#' di href menjadi link checkout / WhatsApp manualmu -->
                 <a href="#" class="btn-cta">SAYA MAU AKSES SEKARANG — DOWNLOAD RP147.000</a>
             </div>
             <p class="bold" style="margin-top: 12px; font-size: 0.9rem; color: var(--color-k3-green);">👉 Klik di sini untuk langsung mengamankan file di Google Drive.</p>
