@@ -164,15 +164,27 @@
             display: block;
         }
 
-        /* Vibrating/Pulse Animation for Final CTA */
+        /* Vibrating/Pulse Animation for Final CTA & Price */
         @keyframes vibrate {
             0% { transform: scale(1); }
             50% { transform: scale(1.03); box-shadow: 0 4px 25px rgba(255, 193, 7, 0.6); }
             100% { transform: scale(1); }
         }
 
+        /* Animasi Khusus untuk Teks Harga */
+        @keyframes price-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
         .vibrate-box {
             animation: vibrate 2s infinite ease-in-out;
+        }
+
+        .pulse-price {
+            display: inline-block;
+            animation: price-pulse 2s infinite ease-in-out;
         }
 
         /* Pain Agitation Section */
@@ -339,17 +351,27 @@
         }
 
         .price-new {
-            font-size: 2.2rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: var(--color-danger);
             margin: 10px 0;
+            line-height: 1.2;
+        }
+
+        /* Penyesuaian Style Teks Harga Promo Baru */
+        .price-green-highlight {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--color-k3-green);
+            margin-top: 5px;
         }
 
         /* Responsive Breakpoints */
         @media (max-width: 600px) {
             h1.main-headline { font-size: 1.6rem; }
             .pain-title { font-size: 1.2rem; }
-            .price-new { font-size: 1.8rem; }
+            .price-new { font-size: 1.4rem; }
+            .price-green-highlight { font-size: 2.2rem; }
             section { padding: 25px 15px; }
             
             /* Menyesuaikan margin negatif di perangkat mobile */
@@ -497,7 +519,7 @@
             <div class="folder-block">
                 <div class="folder-header">VISUAL ASSETS, REGULATION & COMPLIANCE (Media & Aturan)</div>
                 <ul class="file-list">
-                    <li><strong>Kumpulan Checklist:</strong> Berbagai form insign harian untuk APD, alat berat, mesin, dan area kerja lapangan.</li>
+                    <li><strong>Kumpulan Checklist:</strong> Berbagai form insign harian untuk APD, alat berat, mesin, and area kerja lapangan.</li>
                     <li><strong>Rambu Keselamatan dan Kesehatan Kerja / Poster K3:</strong> File aset grafis tanda bahaya, marka, dan poster edukasi K3 siap cetak untuk dipasang di area proyek/pabrik.</li>
                     <li><strong>Dasar K3 & Regulasi K3:</strong> Kompilasi undang-undang, peraturan pemerintah, dan keputusan menteri terbaru sebagai landasan hukum kuat analisis K3-mu.</li>
                     <li><strong>Lain-Lain:</strong> File pelengkap dinamis untuk kebutuhan administrasi HSE tambahan di lapangan.</li>
@@ -519,27 +541,23 @@
             </div>
         </section>
 
-        <!-- --- SECTION BARU: TESTIMONI REAL WHATSAPP --- -->
         <section class="testimonial-section text-center">
             <h2 style="font-size: 1.6rem; margin-bottom: 10px; font-weight: 800;">Mereka Sudah Memotong Jam Lembur & Lulus Ujian Lebih Tenang, Kamu Kapan?</h2>
             <p style="color: var(--text-muted); font-size: 0.95rem;">Berikut adalah bukti tangkapan layar percakapan asli via WhatsApp dari rekan sejawatmu yang sudah merasakan langsung efisiensi instan setelah menggunakan toolkit ini.</p>
             
             <div class="testimonial-container">
-                <!-- Testimoni 1 -->
                 <div class="testimonial-column">
                     <div class="testimonial-card">
                         <img src="testi1fix.png" alt="Testimoni WhatsApp AK3U Ultimate 1">
                     </div>
                 </div>
                 
-                <!-- Testimoni 2 -->
                 <div class="testimonial-column">
                     <div class="testimonial-card">
                         <img src="testi2fix.png" alt="Testimoni WhatsApp AK3U Ultimate 2">
                     </div>
                 </div>
                 
-                <!-- Testimoni 3 -->
                 <div class="testimonial-column">
                     <div class="testimonial-card">
                         <img src="testi3fix.png" alt="Testimoni WhatsApp AK3U Ultimate 3">
@@ -563,7 +581,8 @@
 
             <div class="price-box">
                 <div class="price-old">Normal: Rp399.000</div>
-                <div class="price-new">HARGA PROMO BATCH MINGGU INI: <br><strong>Rp197.000</strong></div>
+                <div class="price-new">HARGA PROMO BATCH MINGGU INI:</div>
+                <div class="pulse-price price-green-highlight"><strong>Rp197.000</strong></div>
             </div>
 
             <p style="font-size: 0.9rem; color: var(--text-muted); text-align: left; margin-bottom: 20px; background: #fffbeb; padding: 10px; border-radius: 6px; border: 1px solid #fef3c7;">
@@ -573,7 +592,7 @@
             <p class="bold" style="margin-bottom: 25px; font-size: 1.05rem;">Jangan judi dengan waktu lemburmu. Jangan pertaruhkan kelulusan ujianmu. Ambillah keputusan taktis hari ini juga.</p>
 
             <div class="vibrate-box">
-                <a href="#" class="btn-cta">SAYA MAU AKSES SEKARANG</a>
+                <a href="https://easy-digital.myr.id/pl/ak3u-operational-career-toolkit" class="btn-cta">SAYA MAU AKSES SEKARANG</a>
             </div>
             <p class="bold" style="margin-top: 12px; font-size: 0.9rem; color: var(--color-k3-green);">👉 Klik di sini untuk langsung mengamankan file di Google Drive.</p>
         </section>
